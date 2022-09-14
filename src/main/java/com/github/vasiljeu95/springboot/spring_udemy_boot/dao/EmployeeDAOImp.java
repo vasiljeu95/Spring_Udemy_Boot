@@ -27,22 +27,22 @@ public class EmployeeDAOImp implements EmployeeDAO {
         return allEmployees;
     }
 
-//    @Override
-//    public void saveEmployee(Employee employee) {
-//        Session session = sessionFactory.getCurrentSession();
-//        session.saveOrUpdate(employee);
-//    }
-//
-//    @Override
-//    public Employee getEmployee(int id) {
-//        Session session = sessionFactory.getCurrentSession();
-//        Employee employee = session.get(Employee.class, id);
-//        return employee;
-//    }
-//
-//    @Override
-//    public void deleteEmployee(Employee employee) {
-//        Session session = sessionFactory.getCurrentSession();
-//        session.delete(employee);
-//    }
+    @Override
+    public void saveEmployee(Employee employee) {
+        Session session = entityManager.unwrap(Session.class);
+        session.saveOrUpdate(employee);
+    }
+
+    @Override
+    public Employee getEmployee(int id) {
+        Session session = entityManager.unwrap(Session.class);
+        Employee employee = session.get(Employee.class, id);
+        return employee;
+    }
+
+    @Override
+    public void deleteEmployee(Employee employee) {
+        Session session = entityManager.unwrap(Session.class);
+        session.delete(employee);
+    }
 }
