@@ -1,6 +1,7 @@
 package com.github.vasiljeu95.springboot.spring_udemy_boot.service;
 
 import com.github.vasiljeu95.springboot.spring_udemy_boot.entity.Employee;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -11,5 +12,5 @@ public interface EmployeeService {
 
     public Employee getEmployee(int id);
 
-    public void deleteEmployee(Employee employee);
+    void deleteEmployee(int id);
 }
